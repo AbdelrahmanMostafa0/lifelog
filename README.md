@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lifelog — Frontend
+
+The frontend for **Lifelog**, a personal ops system for capturing what you do, journaling your thoughts, and archiving ideas and links — all in one place.
+
+Built with **Next.js 15 (App Router)**.
+
+---
+
+## What is Lifelog?
+
+Lifelog is made up of three core sections:
+
+- **Log** — Quickly capture what you did throughout the day. Each entry is timestamped and taggable. Later you can search by day, time range, or tag to recall exactly what happened when.
+- **Journal** — A dedicated space for longer-form writing, reflections, and daily entries.
+- **Archive** — Save ideas, links, and anything worth revisiting. Add notes to items, tag them, and find them later when you need them.
+
+---
+
+## Tech Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Data Fetching | TanStack Query |
+| UI Components | Custom component library |
+| Package Manager | npm |
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/                  # App Router pages & layouts
+│   ├── (auth)/           # Login, register
+│   ├── log/              # Daily activity log
+│   ├── journal/          # Journal entries
+│   └── archive/          # Ideas, links & notes
+├── components/
+│   ├── ui/               # Base UI primitives (Button, Input, Tag…)
+│   └── shared/           # Shared layout components (Navbar, Sidebar…)
+├── lib/                  # Utilities, helpers, API client
+├── hooks/                # Custom React hooks
+└── types/                # Shared TypeScript types
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- npm
+
+### Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:AbdelrahmanMostafa0/lifelog.git
+cd lifelog
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file at the root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:9000
+```
 
-## Learn More
+### Run
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+App will be running at `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Lifelog uses a custom design system defined in `src/styles/lifelog.css` — a Tailwind v4 theme with custom color tokens, typography scale, spacing grid, and component classes. See the [design system doc](./docs/design-system.md) for the full token reference.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Related
+
+- [`lifelog-api`](https://github.com/AbdelrahmanMostafa0/lifelog-api) — The backend (Node.js + Express + MongoDB)
+
+---
+
+## Status
+
+🚧 Active development
