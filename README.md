@@ -60,7 +60,7 @@ src/
 ```bash
 git clone git@github.com:AbdelrahmanMostafa0/lifelog.git
 cd lifelog
-pnpm install
+npm install
 ```
 
 ### Environment Variables
@@ -74,7 +74,7 @@ NEXT_PUBLIC_API_URL=http://localhost:9000
 ### Run
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 App will be running at `http://localhost:3000`.
