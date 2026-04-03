@@ -1,5 +1,12 @@
 @import "tailwindcss";
-
+/* for base ui setup */
+.root {
+  isolation: isolate;
+}
+body {
+  position: relative;
+}
+/* design system setup */
 @theme {
   /* ─── Color Tokens ─────────────────────────────────────────── */
   --color-bg: #fbf9f4;
