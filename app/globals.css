@@ -23,9 +23,9 @@ body {
   --color-danger: #8a1a1a;
 
   /* ─── Typography ────────────────────────────────────────────── */
-  --font-display: "Playfair Display", "Georgia", serif;
-  --font-body: "DM Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "DM Mono", "Courier New", monospace;
+  --font-display: var(--font-playfair-display), "Georgia", serif;
+  --font-body: var(--font-dm-sans), "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-dm-mono), "Courier New", monospace;
 
   /* ─── Type scale ────────────────────────────────────────────── */
   --font-size-display: 1.75rem;
@@ -194,6 +194,22 @@ body {
     color: var(--color-text-primary);
   }
 
+  .btn-danger {
+    background-color: var(--color-danger);
+    color: var(--color-surface);
+    border-color: var(--color-danger);
+  }
+  .btn-danger:hover {
+    background-color: color-mix(in srgb, var(--color-danger) 85%, black);
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   .tag {
     display: inline-flex;
     align-items: center;
@@ -231,7 +247,7 @@ body {
   .input::placeholder {
     color: var(--color-tag-text);
   }
-  .input:focus {
+  .input:focus-visible {
     border-color: var(--color-accent);
     box-shadow: var(--shadow-focus);
   }
@@ -295,6 +311,37 @@ body {
   }
   .border-danger {
     border-color: var(--color-danger) !important;
+  }
+
+  .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4) var(--spacing-4);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-normal);
+  }
+  .alert-info {
+    background-color: color-mix(in srgb, var(--color-accent-light) 30%, white);
+    border-color: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+  .alert-success {
+    background-color: color-mix(in srgb, var(--color-accent-light) 30%, white);
+    border-color: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+  .alert-danger {
+    background-color: color-mix(in srgb, var(--color-danger) 8%, white);
+    border-color: color-mix(in srgb, var(--color-danger) 25%, white);
+    color: var(--color-danger);
+  }
+  .alert-warning {
+    background-color: #fdf7ee;
+    border-color: #f0d9a8;
+    color: #7a4f00;
   }
 }
 
