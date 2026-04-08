@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "@/lib/cn";
 
 interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   selected?: boolean;
@@ -8,9 +9,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
   ({ selected, className, children, ...props }, ref) => (
     <div
       ref={ref}
-      className={["tag", selected && "tag-selected", className]
-        .filter(Boolean)
-        .join(" ")}
+      className={cn("tag", selected && "tag-selected", className)}
       {...props}
     >
       {children}

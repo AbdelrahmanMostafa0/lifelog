@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "@/lib/cn";
 
 type AlertVariant = "info" | "success" | "warning" | "danger";
 
@@ -17,9 +18,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ variant, className, children, ...props }, ref) => (
     <div
       ref={ref}
-      className={["alert", variantClass[variant], className]
-        .filter(Boolean)
-        .join(" ")}
+      className={cn("alert", variantClass[variant], className)}
       {...props}
     >
       {children}

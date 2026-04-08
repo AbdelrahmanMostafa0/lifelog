@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import ProfileIntializer from "@/components/ProfileIntializer";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -34,8 +37,16 @@ export default function RootLayout({
       lang="en"
       className={`${playfairDisplay.variable} ${dmSans.variable} ${dmMono.variable} h-full antialiased`}
     >
+      {" "}
       <body>
-        <div className="root">{children}</div>
+        <GoogleOAuthProvider
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
+        >
+          <ReactQueryProvider>
+            <div className="root">{children}</div>
+            <ProfileIntializer></ProfileIntializer>
+          </ReactQueryProvider>
+        </GoogleOAuthProvider>
       </body>
     </html>
   );

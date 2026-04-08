@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import { cn } from "@/lib/cn";
 
 type Variant = "primary" | "secondary" | "tertiary" | "danger";
 
@@ -18,7 +19,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = "primary", className, children, ...props }, ref) => (
     <button
       ref={ref}
-      className={["btn", variantClass[variant], className].filter(Boolean).join(" ")}
+      className={cn("btn", variantClass[variant], className)}
       {...props}
     >
       {children}
