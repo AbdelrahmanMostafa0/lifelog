@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "@/lib/cn";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
@@ -12,7 +13,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <span className="input-icon">{icon}</span>
           <input
             ref={ref}
-            className={["input", className].filter(Boolean).join(" ")}
+            className={cn("input", className)}
             {...props}
           />
         </div>
@@ -21,7 +22,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
-        className={["input", className].filter(Boolean).join(" ")}
+        className={cn("input", className)}
         {...props}
       />
     );
@@ -35,7 +36,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => (
     <textarea
       ref={ref}
-      className={["input", className].filter(Boolean).join(" ")}
+      className={cn("input", className)}
       {...props}
     />
   )
