@@ -15,3 +15,6 @@ export const loginUser = async (data: { email: string; password: string }) => {
 export const googleLogin = async (data: { access_token: string }) => {
   return api.post("/auth/google", data);
 };
+export const logoutUser = async () => {
+  return api.post("/auth/logout");
+};

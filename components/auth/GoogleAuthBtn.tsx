@@ -15,7 +15,7 @@ const GoogleAuthBtn = () => {
     onSuccess: (data) => {
       setUser(data.data.data);
       profileRefetch();
-      router.push("/");
+      router.push("/home");
     },
   });
   const googleLogin = useGoogleLogin({
