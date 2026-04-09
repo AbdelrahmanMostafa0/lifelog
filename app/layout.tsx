@@ -4,6 +4,7 @@ import "./globals.css";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import ProfileIntializer from "@/components/ProfileIntializer";
+import { GlobalNav } from "@/components/GlobalNav";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -43,7 +44,8 @@ export default function RootLayout({
           clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
         >
           <ReactQueryProvider>
-            <div className="root">{children}</div>
+            <GlobalNav />
+            <div className="root pt-16">{children}</div>
             <ProfileIntializer></ProfileIntializer>
           </ReactQueryProvider>
         </GoogleOAuthProvider>

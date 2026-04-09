@@ -50,7 +50,7 @@ const RegisterForm = () => {
     onSuccess: (data) => {
       setUser(data.data.data);
       profileRefetch();
-      router.push("/");
+      router.push("/home");
     },
   });
   const onSubmit = (data: RegisterFormData) => {
