@@ -3,17 +3,22 @@ import { cn } from "@/lib/cn";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
+  variant?: "default" | "ghost";
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ icon, className, ...props }, ref) => {
+  ({ icon, variant = "default", className, ...props }, ref) => {
+    const baseClass = variant === "ghost"
+      ? "bg-transparent border-none outline-none shadow-none ring-0 focus:ring-0 placeholder:opacity-100"
+      : "input";
+
     if (icon) {
       return (
         <div className="input-group">
           <span className="input-icon">{icon}</span>
           <input
             ref={ref}
-            className={cn("input", className)}
+            className={cn(baseClass, className)}
             {...props}
           />
         </div>
@@ -22,7 +27,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
-        className={cn("input", className)}
+        className={cn(baseClass, className)}
         {...props}
       />
     );
