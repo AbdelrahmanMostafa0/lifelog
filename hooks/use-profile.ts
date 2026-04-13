@@ -18,6 +18,7 @@ export const useProfile = () => {
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
+    retry: false,
   });
   const { mutate: logout } = useMutation({
     mutationFn: logoutUser,

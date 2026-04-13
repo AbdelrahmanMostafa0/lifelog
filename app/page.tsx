@@ -4,6 +4,7 @@ import { EntryExperienceSection } from "@/components/landing/EntryExperienceSect
 import { FeaturesSection } from "@/components/landing/FeaturesSection";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { CTASection } from "@/components/landing/CTASection";
+import { DownloadSection } from "@/components/landing/DownloadSection";
 import { LandingFooter } from "@/components/landing/LandingFooter";
 
 export default function LandingPage() {
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <FeaturesSection />
       <StatsSection />
       <CTASection />
+      <DownloadSection />
       <LandingFooter />
     </div>
   );

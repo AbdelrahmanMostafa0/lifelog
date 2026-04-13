@@ -30,9 +30,7 @@ function Avatar({
 
   if (src) {
     return (
-      <Image
-        width={size}
-        height={size}
+      <img
         src={src}
         alt={name}
         className="rounded-full object-cover shrink-0"
@@ -111,14 +109,15 @@ export const GlobalNav = () => {
         {/* Logo */}
         <Link
           href={user ? "/home" : "/"}
-          className="font-display text-accent"
-          style={{
-            fontSize: "1.25rem",
-            fontStyle: "italic",
-            letterSpacing: "-0.01em",
-          }}
+          className="flex items-center gap-2"
         >
-          Lifelog
+          <Image src="/images/logo.png" alt="Lifelog" width={28} height={28} />
+          <span
+            className="font-display text-accent"
+            style={{ fontSize: "1.25rem", fontStyle: "italic", letterSpacing: "-0.01em" }}
+          >
+            Lifelog
+          </span>
         </Link>
 
         {/* ── Desktop ── */}
