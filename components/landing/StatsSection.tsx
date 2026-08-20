@@ -1,16 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { MockStatsCard } from "./MockStatsCard";
+import { MockPatternsCard } from "./MockPatternsCard";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 const viewport = { once: true, amount: 0.2 };
 
 const insights = [
-  "Which days you felt good — and what they had in common",
-  "Patterns in your mood across certain weeks",
-  "How your tone has quietly changed ",
-  "What you keep coming back to, without realizing it",
+  "Which days felt good — and what they had in common",
+  "The places and people that keep showing up",
+  "How your tone has quietly changed",
+  "What you keep returning to, without realizing it",
 ];
 
 export const StatsSection = () => (
@@ -54,8 +54,8 @@ export const StatsSection = () => (
             className="text-secondary mb-8"
             style={{ fontSize: "1rem", lineHeight: 1.8, maxWidth: "40ch" }}
           >
-            You begin to notice patterns — not because you tracked them, but
-            because they show up.
+            You begin to notice patterns — not because anything counted them,
+            but because they show up on their own.
           </motion.p>
           <motion.p
             variants={fadeUp}
@@ -92,7 +92,7 @@ export const StatsSection = () => (
           </motion.ul>
         </motion.div>
 
-        {/* Card — slightly larger on this section to give it visual weight */}
+        {/* Card — carries the section's visual weight now that no chart does */}
         <motion.div
           className="flex-1 w-full flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 24 }}
@@ -100,7 +100,7 @@ export const StatsSection = () => (
           viewport={viewport}
           transition={{ duration: 0.7 }}
         >
-          <MockStatsCard />
+          <MockPatternsCard />
         </motion.div>
       </div>
     </div>

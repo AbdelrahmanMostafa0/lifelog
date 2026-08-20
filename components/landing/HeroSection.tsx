@@ -62,8 +62,8 @@ export const HeroSection = () => (
             marginBottom: "2rem",
           }}
         >
-          No prompts. No streaks. Just write what happened — and over time,
-          start to see yourself more clearly.
+          No streaks. No scores. Nothing to keep up with. Just write what
+          happened — and over time, start to see yourself more clearly.
         </motion.p>
         <motion.div
           variants={fadeUp}

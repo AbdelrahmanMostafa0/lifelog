@@ -1,15 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-const moodColors = [
-  "#bceec8",
-  "#bceec8",
-  "#e4dfd7",
-  "#bceec8",
-  "#52b788",
-  "#bceec8",
-  "#bceec8",
-];
+const tags = ["café", "friends", "unplanned"];
 
 export const MockEntryCard = () => (
   <motion.div
@@ -41,15 +33,7 @@ export const MockEntryCard = () => (
 
     <p
       className="text-secondary"
-      style={{
-        fontSize: "0.8rem",
-        lineHeight: 1.65,
-        display: "-webkit-box",
-        WebkitLineClamp: 2,
-        WebkitBoxOrient: "vertical",
-        overflow: "hidden",
-        opacity: 0.7,
-      }}
+      style={{ fontSize: "0.8rem", lineHeight: 1.65, opacity: 0.7 }}
     >
       + expand entry
     </p>
@@ -58,27 +42,18 @@ export const MockEntryCard = () => (
       className="flex items-center gap-2 mt-4 pt-4"
       style={{ borderTop: "1px solid var(--color-border)" }}
     >
-      <span
-        className="text-secondary font-mono"
-        style={{ fontSize: "0.65rem" }}
-      >
-        MOOD
-      </span>
-      <div className="flex gap-1">
-        {moodColors.map((c, i) => (
-          <div
-            key={i}
-            style={{
-              width: 10,
-              height: 10,
-              borderRadius: 3,
-              backgroundColor: c,
-            }}
-          />
+      <div className="flex flex-wrap gap-1.5">
+        {tags.map((t) => (
+          <span key={t} className="tag" style={{ fontSize: "0.7rem" }}>
+            {t}
+          </span>
         ))}
       </div>
-      <span className="text-secondary ml-auto" style={{ fontSize: "0.7rem" }}>
-        5-day streak 🔥
+      <span
+        className="text-secondary font-mono ml-auto shrink-0"
+        style={{ fontSize: "0.65rem", opacity: 0.8 }}
+      >
+        SAVED
       </span>
     </div>
   </motion.div>
